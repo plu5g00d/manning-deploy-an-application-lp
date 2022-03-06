@@ -1,3 +1,3 @@
-# getting-the-app-in-kubernetes-lp-author
+# deploy-an-application-lp-author
 
 
