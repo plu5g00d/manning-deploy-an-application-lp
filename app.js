@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.static('public'));
 
-// var requestCount = 0;
+var requestCount = 0;
 
 app.get('/live', function(req,res) {
   console.log('Liveness probe')
@@ -39,23 +39,20 @@ app.get('/ready', function(req,res) {
   
   });
 
-// var handler = function(request, response) {
-//   console.log("Received request from " + request.connection.remoteAddress);
-//   requestCount++;
-//   if (requestCount > 5) {
-//     response.writeHead(500);
-//     response.end("I'm not well. Please restart me!");
-//     return;
-//   }
-//   response.writeHead(200);
-//   response.end("You've hit " + os.hostname() + "\n");
-// };
+var handler = function(request, response) {
+  console.log("Received request from " + request.connection.remoteAddress);
+  requestCount++;
+  if (requestCount > 5) {
+    response.writeHead(500);
+    response.end("I'm not well. Please restart me!");
+    return;
+  }
+  response.writeHead(200);
+  response.end("You've hit " + os.hostname() + "\n");
+};
 
-// var www = http.createServer(handler);
+var www = http.createServer(handler);
 
-app.listen(3000, function () {
-    console.log('HomeJoy app listening on port 5000!');
-  });
 
 app.get('/welcome', function(req, res) {
     console.log('Printing status message');
@@ -106,4 +103,6 @@ app.get('/welcome', function(req, res) {
 //     });
 // });
 
-app.listen(5000);
+app.listen(5000, function () {
+  console.log('HomeJoy app listening on port 5000!');
+});
