@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:     
+  labels:
+    run: myk8shop
+  namespace: shopping-app
+  name: myk8shop
+spec: 
+  containers: 
+  - name: myk8shop
+    image: plusgood/shopping-cart:2.0
+    ports: 
+    - containerPort: 5000
