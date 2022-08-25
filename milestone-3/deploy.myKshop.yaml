@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: shopping
+  name: shopping-app-deploy
+  namespace: shopping-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: shopping
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: shopping
+    spec:
+      containers:
+      - image: plusgood/shopping-cart:2.0
+        name: shopping-cart
+        resources: {}
+status: {}
