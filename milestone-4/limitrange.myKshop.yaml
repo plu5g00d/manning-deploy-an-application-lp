@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+    name: shopping-app-limits 
+    namespace: shopping-app
+spec:
+    limits:
+    - type: Container
+      defaultRequest:
+        cpu: 200m
+        memory: 10M
+      default:
+        cpu: 1
+        memory: 20M
