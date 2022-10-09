@@ -1,5 +1,5 @@
 ## Manning liveProject [Getting Started with Kubernetes](https://www.manning.com/liveprojectseries/getting-started-with-kubernetes-ser)
-## Project 4 [Deploy an Application](https://www.manning.com/liveproject/deploy-an-application)
+## Project 2 [Deploy an Application](https://www.manning.com/liveproject/deploy-an-application)
 
 This liveProject is divided into 5 milestones.
 
